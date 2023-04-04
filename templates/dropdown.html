@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Data</title>
+</head>
+<body style="background-color:powderblue; text-align:center;">
+  <br><br>
+  <h2>Select the School and Class</h2>
+<center>
+    <form class="form-inline" method="POST", action={{ url_for('table') }} >
+        <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">SELECT</span>
+     <select name="school" id = "school" method="GET" action="/" class="selectpicker form-control">
+        <option value="{{unischools[0]}}" selected>{{unischools[0]}}</option>
+        {% for school in unischools[1:] %}
+        <option value="{{school}}">{{school}}</option>
+        {% endfor %}
+    </select>
+        <select name="classes" id="classes" method="GET" action="/">
+        <option value="{{classlists[0]}}" selected>{{classlists[0]}}</option>
+        {% for classes in classlists[1:] %}
+        <option value="{{classes}}">{{classes}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    </div>
+        <button style="padding: 0.5rem;  background-color:rgb(13, 22, 16);color:white;width:150px;" type ="submit" >GET DATA</button>
+    </div>
+    </form>
+</center>
+</body>
+</html>
